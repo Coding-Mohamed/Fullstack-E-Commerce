@@ -12,7 +12,7 @@ const LoginForm = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    // Simple validation
+    // validation
     if (!formData.password.trim() || !formData.email.trim()) {
       setValidationError("All fields are required");
       setShowValidationError(true);

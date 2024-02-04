@@ -36,7 +36,7 @@ const Header = () => {
   };
 
   const handleLogin = () => {
-    // Perform login operation...
+    // login operation...
   };
 
   const handleLogout = () => {

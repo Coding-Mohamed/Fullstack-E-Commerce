@@ -1,4 +1,3 @@
-// About Us Content.jsx
 const AboutUsContent = () => {
   return (
     <div className="container aboutus border border-1 border-light p-3 rounded">

@@ -18,29 +18,16 @@ const ContactForm = () => {
   };
 
   const isValidEmail = (email) => {
-    // Basic email validation
+    // validation
     const basicEmailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!basicEmailRegex.test(email.trim())) {
       return false;
     }
 
-    // Extract the domain
     const [, domain] = email.split("@");
 
     // Top 10 most popular email domains
-    const popularDomains = [
-      "gmail.com",
-      "yahoo.com",
-      "hotmail.com",
-      "outlook.com",
-      "aol.com",
-      "icloud.com",
-      "mail.com",
-      "zoho.com",
-      "protonmail.com",
-      "live.com",
-      // Add more popular domains as needed
-    ];
+    const popularDomains = ["gmail.com", "yahoo.com", "hotmail.com", "outlook.com", "aol.com", "icloud.com", "mail.com", "zoho.com", "protonmail.com", "live.com"];
 
     if (!popularDomains.includes(domain.toLowerCase())) {
       return false;
@@ -59,7 +46,6 @@ const ContactForm = () => {
       return;
     }
 
-    // Email validation
     if (!isValidEmail(formData.email)) {
       setValidationError("Invalid email address or unsupported domain");
       setShowValidationError(true);
@@ -67,7 +53,6 @@ const ContactForm = () => {
     }
 
     try {
-      // Corrected URL for the messaging endpoint
       await axios.post("https://js2-ecommerce-api.vercel.app/api/messages", formData);
       setIsSubmitted(true);
     } catch (error) {

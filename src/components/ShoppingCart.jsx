@@ -15,7 +15,7 @@ const ShoppingCart = () => {
   useEffect(() => {
     // Stringify the cart items before storing them
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
-  }, [cartItems]); // This effect runs whenever cartItems changes
+  }, [cartItems]);
 
   useEffect(() => {
     const savedCartItems = localStorage.getItem("cartItems");

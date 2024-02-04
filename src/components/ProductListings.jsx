@@ -1,10 +1,9 @@
 import { useState, useEffect } from "react";
-import "./Style/ProductListings.css"; // Import your styles
+import "./Style/ProductListings.css";
 import { useDispatch, useSelector } from "react-redux";
 import { getProducts, addToCart } from "../features/products/ProductSlice";
 import { Link } from "react-router-dom";
-/* import CategoryList from "./CategoryList";
- */ import TopSelling from "./TopSelling";
+import TopSelling from "./TopSelling";
 import Reviews from "./Reviews";
 
 const ProductListings = () => {
@@ -41,12 +40,6 @@ const ProductListings = () => {
   return (
     <>
       <div className="product-listings">
-        {/*   <div className="dropdown">
-          <button className="dropbtn">Categories</button>
-          <div className="dropdown-content">
-            <CategoryList />
-          </div>
-        </div> */}
         <div className="products">
           {displayedProducts.map((product) => (
             <Link to={`/products/${product._id}`} key={product._id} className="product-item">

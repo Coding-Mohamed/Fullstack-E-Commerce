@@ -17,29 +17,15 @@ const RegisterForm = () => {
   };
 
   const isValidEmail = (email) => {
-    // Basic email validation
+    //  validation
     const basicEmailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!basicEmailRegex.test(email.trim())) {
       return false;
     }
 
-    // Extract the domain
     const [, domain] = email.split("@");
 
-    // Top 10 most popular email domains
-    const popularDomains = [
-      "gmail.com",
-      "yahoo.com",
-      "hotmail.com",
-      "outlook.com",
-      "aol.com",
-      "icloud.com",
-      "mail.com",
-      "zoho.com",
-      "protonmail.com",
-      "live.com",
-      // Add more popular domains as needed
-    ];
+    const popularDomains = ["gmail.com", "yahoo.com", "hotmail.com", "outlook.com", "aol.com", "icloud.com", "mail.com", "zoho.com", "protonmail.com", "live.com"];
 
     if (!popularDomains.includes(domain.toLowerCase())) {
       return false;
@@ -61,7 +47,7 @@ const RegisterForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Simple validation
+    //  validation
     if (!formData.password.trim() || !formData.email.trim() || !formData.passwordConfirm.trim()) {
       setValidationError("All fields are required");
       setShowValidationError(true);
@@ -86,7 +72,7 @@ const RegisterForm = () => {
       return;
     }
 
-    // Continue with form submission
+    // form submission
     try {
       await axios.post("https://js2-ecommerce-api.vercel.app/api/auth/register", formData);
       setIsSubmitted(true);
