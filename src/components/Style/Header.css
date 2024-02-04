@@ -1,0 +1,226 @@
+:root {
+  --Nav: #333;
+  --NavText: #fff;
+  --Hover: #555;
+  --Text: #fff;
+}
+
+nav {
+  display: flex;
+  background-color: var(--Nav);
+  color: var(--NavText);
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  width: 100%;
+}
+
+.logo {
+  text-decoration: none;
+  color: var(--NavText);
+  margin-left: 20px;
+  font-size: 3rem;
+  text-transform: uppercase;
+}
+
+.logo:hover {
+  color: var(--Hover);
+  transform: scale(1.1);
+  transition: all 0.7s ease;
+}
+
+.nav-links {
+  color: var(--NavText);
+  display: flex;
+  gap: 1rem;
+  margin-right: 1rem;
+  list-style-type: none;
+}
+
+.nav-links .nav-link {
+  color: var(--NavText);
+  text-decoration: none;
+  font-size: 1.7rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.nav-links .nav-link:hover {
+  background-color: var(--Hover);
+  color: var(--Text);
+  border-radius: 10px;
+  transition: all 0.5s ease;
+}
+
+.nav-links .nav-link.account-link:hover {
+  background-color: transparent;
+  color: var(--Text);
+  border-radius: 10px;
+}
+
+.nav-links .nav-link .cart {
+  width: 45px;
+  height: 40px;
+  margin-top: -3px;
+}
+
+.menu,
+#checkbox {
+  display: none;
+}
+
+.account-dropdown {
+  display: none;
+  position: absolute;
+  top: 5rem;
+  right: 1rem;
+  background-color: #13c1bb;
+  width: 400px;
+  min-height: 100px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 0.5rem;
+}
+
+.account-dropdown::before {
+  content: "";
+  position: absolute;
+  top: -70px;
+  right: 0;
+  width: 60px; /* Adjust the width of the rectangle */
+  height: 80px; /* Adjust the height of the rectangle */
+  background-color: transparent;
+  z-index: -99;
+  border-radius: 0.3rem;
+  border: 2px solid #13c1bb;
+}
+
+.account-dropdown li {
+  color: black;
+  text-decoration: none;
+  display: block;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.account-dropdown li .btn {
+  width: 100%;
+  text-align: left;
+}
+
+/* Ensure dropdown remains visible on hover */
+.account-link:hover .account-dropdown {
+  display: block;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 876px) {
+  .nav-links {
+    position: absolute;
+    top: 100px;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    background: rgba(0, 0, 0, 0.75);
+    width: 100%;
+    right: -1rem;
+    padding: 0rem 0px;
+    height: 0vh;
+    overflow: hidden;
+    transition: 500ms;
+    z-index: 99;
+  }
+
+  input:checked ~ .nav-links {
+    height: 100vh;
+    padding: 5rem 0rem;
+  }
+
+  .menu {
+    display: block;
+    width: 3.5rem;
+    color: var(--color);
+  }
+
+  .menu label {
+    width: 6rem;
+    height: 6rem;
+    position: absolute;
+  }
+
+  .x-icon {
+    display: none;
+  }
+
+  input:checked ~ .menu .line-icon {
+    display: none;
+  }
+
+  input:checked ~ .menu .x-icon {
+    display: block;
+  }
+
+  .account-dropdown {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    right: 1rem;
+    background-color: #13c1bb;
+    width: 400px;
+    min-height: 100px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 0.5rem;
+  }
+
+  .account-dropdown::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    right: 0;
+    width: 60px; /* Adjust the width of the rectangle */
+    height: 80px; /* Adjust the height of the rectangle */
+    background-color: transparent;
+    z-index: -99;
+    border-radius: 0.3rem;
+    border: 2px solid #13c1bb;
+  }
+
+  .account-dropdown li {
+    color: black;
+    text-decoration: none;
+    display: block;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
+
+  .account-dropdown li .btn {
+    width: 100%;
+    text-align: left;
+  }
+}
+/* Styles for screen size 850px or less */
+/* Adjustments for small screens */
+@media (max-width: 850px) {
+  .account-dropdown {
+    width: 100%; /* Full width */
+    right: 0; /* Align to the right edge */
+    top: 450px; /* Push it down a bit */
+    max-height: 70vh; /* Limit the maximum height */
+    height: 300px;
+    overflow-y: auto; /* Make it scrollable if the content is too long */
+    padding: 20px; /* Add some padding */
+    box-sizing: border-box; /* Make sure padding is included in the width */
+    background-color: #555;
+  }
+
+  .account-dropdown::before {
+    display: none; /* Hide the before pseudo-element on small screens */
+  }
+
+  .account-dropdown li {
+    padding: 0px 0; /* Add vertical padding to each list item */
+  }
+}

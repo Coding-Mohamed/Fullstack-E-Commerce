@@ -1,0 +1,86 @@
+/* Reset styles for the carousel */
+#carouselExampleSlidesOnly {
+  position: relative;
+  width: 100%;
+  height: 75vh;
+  overflow: hidden;
+}
+
+/* Style for the carousel inner container */
+#carouselExampleSlidesOnly .carousel-inner {
+  position: relative;
+  width: 100%;
+  height: 100%; /* Ensure the inner container covers the specified height */
+  display: flex;
+  transition: transform 1s ease-in-out;
+}
+
+/* Style for each carousel item */
+#carouselExampleSlidesOnly .carousel-item {
+  flex: 0 0 100%;
+}
+
+/* Style for the active carousel item */
+#carouselExampleSlidesOnly .carousel-item.active {
+  display: block;
+}
+
+/* Styles for the carousel images */
+#carouselExampleSlidesOnly .carousel-item .dark-overlay img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Adjust as needed to focus on the top of the image */
+}
+
+#carouselExampleSlidesOnly .dark-overlay {
+  width: 100%;
+  height: 100%; /* Adjust the alpha (last value) for darkness */
+}
+
+.dark-overlay::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+/* Style for the visually hidden text */
+
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--Extra);
+  text-align: center;
+}
+
+.hero-text h1 {
+  font-size: 2rem;
+  text-transform: uppercase;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.hero-text .hero-link {
+  text-decoration: none;
+  color: var(--Extra);
+  border: 1px solid var(--Extra);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 1.5rem;
+  transition: all 0.5s ease;
+}
+
+.hero-text .hero-link:hover {
+  background-color: var(--Extra);
+  color: var(--Text);
+  border-radius: 10px;
+  transition: all 0.5s ease-in-out;
+  font-weight: 600;
+  transform: scale(1.1);
+}
