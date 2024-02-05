@@ -22,7 +22,7 @@ A sleek e-commerce platform crafted with React, offering a delightful shopping e
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/e-commerce-website.git
+   git clone https://github.com/Coding-Mohamed/Ecommers-Store.git
    ```
 
 2. Install dependencies:

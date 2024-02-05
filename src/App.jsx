@@ -1,6 +1,5 @@
-// App.jsx
 import { BrowserRouter as Router } from "react-router-dom";
-import AppContent from "./AppContent"; // Import the new component
+import AppContent from "./AppContent";
 import store from "./store";
 import { Provider } from "react-redux";
 

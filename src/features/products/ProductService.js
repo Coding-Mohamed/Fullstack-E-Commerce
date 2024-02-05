@@ -1,4 +1,3 @@
-// features/products/productService.js
 import axios from "axios";
 
 const productService = {
