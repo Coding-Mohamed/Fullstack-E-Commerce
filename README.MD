@@ -20,26 +20,6 @@ This project features a backend API built with Express and Node.js for an e-comm
 - JSON Web Tokens (JWT)
 - bcrypt.js
 
-### Setup
-
-1. Clone the backend repository:
-
-   ```bash
-   git clone https://github.com/Coding-Mohamed/Fullstack-Ecommers.git
-   ```
-
-2. Install dependencies:
-
-   ```bash
-   npm install
-   ```
-
-3. Running the server:
-
-   ```bash
-   npm start
-   ```
-
 # Endpoints
 
 Authentication
@@ -88,7 +68,7 @@ A sleek e-commerce platform crafted with React, offering a delightful shopping e
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/Coding-Mohamed/Ecommers-Store.git
+   https://github.com/Coding-Mohamed/Fullstack-E-Commerce
    ```
 
 2. Install dependencies:
@@ -97,9 +77,16 @@ A sleek e-commerce platform crafted with React, offering a delightful shopping e
    npm install
    ```
 
-3. Run the application:
+3. Run the application (Frontend):
+
    ```bash
    npm run dev
+
+   ```
+
+4. Running the server (Backend):
+   ```bash
+   npm start
    ```
 
 ### Note
